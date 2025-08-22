@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>BakeMania - Piekarnia z Pasją</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+    header {
+      background: #d35400;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #d35400;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .price {
+      font-weight: bold;
+      color: #27ae60;
+    }
+    .stars {
+      color: gold;
+      font-size: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Nagłówek -->
+  <header>
+    <h1>BakeMania 🥖🍰🥐</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#historia">Historia</a>
+      <a href="#opinie">Opinie</a>
+    </nav>
+  </header>
+
+  <!-- 🔹 Menu -->
+  <section id="menu">
+    <h2>Nasze Wyroby</h2>
+    <div class="menu-grid">
+      <div class="card">
+        <h3>Tort Czekoladowy</h3>
+        <p>Skład: czekolada, kakao, mąka, jaja, masło</p>
+        <p class="price">Cena: 80 zł</p>
+      </div>
+      <div class="card">
+        <h3>Sernik Królewski</h3>
+        <p>Skład: twaróg, cukier, wanilia, jajka, kruche ciasto</p>
+        <p class="price">Cena: 60 zł</p>
+      </div>
+      <div class="card">
+        <h3>Drożdżówka z serem</h3>
+        <p>Skład: mąka pszenna, drożdże, ser biały, cukier</p>
+        <p class="price">Cena: 6 zł</p>
+      </div>
+      <div class="card">
+        <h3>Chleb Razowy</h3>
+        <p>Skład: mąka żytnia, zakwas, sól, woda</p>
+        <p class="price">Cena: 10 zł</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Historia -->
+  <section id="historia">
+    <h2>Nasza Historia</h2>
+    <p>
+      Piekarnia <b>BakeMania</b> powstała w 1998 roku z pasji do tradycyjnego pieczenia chleba.
+      Rozpoczęliśmy od małego pieca w rodzinnej kuchni, a dziś jesteśmy miejscem,
+      gdzie codziennie setki klientów mogą cieszyć się świeżym pieczywem, ciastami i tortami.
+    </p>
+    <p>
+      Naszą misją jest łączenie tradycyjnych receptur z nowoczesnym podejściem do jakości.
+      W BakeManii wierzymy, że zapach świeżego chleba potrafi poprawić każdy dzień 🍞.
+    </p>
+  </section>
+
+  <!-- 🔹 Opinie -->
+  <section id="opinie">
+    <h2>Opinie Klientów</h2>
+    <div class="card">
+      <p><b>Agnieszka</b>: Najlepszy sernik, jaki jadłam! <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="card">
+      <p><b>Marek</b>: Chleb razowy smakuje jak dawniej u babci. <span class="stars">★★★★☆</span></p>
+    </div>
+    <div class="card">
+      <p><b>Kasia</b>: Tort czekoladowy to mistrzostwo świata! <span class="stars">★★★★★</span></p>
+    </div>
+    <div class="card">
+      <p><b>Jan</b>: Drożdżówki zawsze świeże i puszyste. <span class="stars">★★★★☆</span></p>
+    </div>
+  </section>
+
+  <!-- 🔹 Stopka -->
+  <footer>
+    <p>© 2025 BakeMania – Wszystkie prawa zastrzeżone</p>
+  </footer>
+
+</body>
+</html>
