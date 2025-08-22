@@ -140,5 +140,41 @@
     <p>© 2025 BakeMania – Wszystkie prawa zastrzeżone</p>
   </footer>
 
+<script>
+function sendMessage() {
+  let input = document.getElementById("chat-input");
+  let msg = input.value.trim();
+  if (!msg) return;
+  
+  // Wyświetl wiadomość użytkownika
+  let messages = document.getElementById("chat-messages");
+  messages.innerHTML += "<div><b>Ty:</b> " + msg + "</div>";
+  input.value = "";
+
+  // Proste odpowiedzi bota
+  let reply = "Nie rozumiem, możesz powtórzyć? 🤔";
+  msg = msg.toLowerCase();
+
+  if (msg.includes("cena") || msg.includes("koszt")) {
+    reply = "Nasze ceny zaczynają się już od 6 zł za drożdżówkę 🥐.";
+  } else if (msg.includes("tort") || msg.includes("ciasto")) {
+    reply = "Polecamy nasz Tort Czekoladowy (80 zł) i Sernik Królewski (60 zł) 🍰.";
+  } else if (msg.includes("chleb")) {
+    reply = "Mamy świeży chleb razowy za 10 zł 🍞.";
+  } else if (msg.includes("dzień dobry") || msg.includes("hej") || msg.includes("witaj")) {
+    reply = "Dzień dobry! W czym mogę pomóc? 🙂";
+  } else if (msg.includes("godzina") || msg.includes("godziny") || msg.includes("kiedy")) {
+    reply = "BakeMania jest otwarta od poniedziałku do soboty w godzinach 6:00–18:00, a w niedziele 7:00–14:00 ⏰.";
+  }
+
+  // Wyświetl odpowiedź bota
+  setTimeout(() => {
+    messages.innerHTML += "<div><b>BakeManiaBot:</b> " + reply + "</div>";
+    messages.scrollTop = messages.scrollHeight;
+  }, 500);
+}
+</script>
+
+
 </body>
 </html>
