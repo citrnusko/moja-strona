@@ -140,40 +140,49 @@
     <p>© 2025 BakeMania – Wszystkie prawa zastrzeżone</p>
   </footer>
 
-<script>
-function sendMessage() {
-  let input = document.getElementById("chat-input");
-  let msg = input.value.trim();
-  if (!msg) return;
-  
-  // Wyświetl wiadomość użytkownika
-  let messages = document.getElementById("chat-messages");
-  messages.innerHTML += "<div><b>Ty:</b> " + msg + "</div>";
-  input.value = "";
+  <!-- 🔹 Chatbot -->
+  <div id="chatbot" style="position:fixed; bottom:20px; right:20px; width:300px; background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); font-family:Arial, sans-serif; display:flex; flex-direction:column; overflow:hidden; z-index:999;">
+    <div style="background:#d35400; color:white; padding:10px; text-align:center;">
+      💬 Chat z BakeManią
+    </div>
+    <div id="chat-messages" style="flex:1; padding:10px; overflow-y:auto; max-height:200px; font-size:14px;"></div>
+    <div style="display:flex; border-top:1px solid #ccc;">
+      <input id="chat-input" type="text" placeholder="Napisz wiadomość..." style="flex:1; border:none; padding:10px; font-size:14px;">
+      <button onclick="sendMessage()" style="background:#d35400; color:white; border:none; padding:10px 15px;">➤</button>
+    </div>
+  </div>
 
-  // Proste odpowiedzi bota
-  let reply = "Nie rozumiem, możesz powtórzyć? 🤔";
-  msg = msg.toLowerCase();
+  <script>
+  function sendMessage() {
+    let input = document.getElementById("chat-input");
+    let msg = input.value.trim();
+    if (!msg) return;
+    
+    let messages = document.getElementById("chat-messages");
+    messages.innerHTML += "<div><b>Ty:</b> " + msg + "</div>";
+    input.value = "";
 
-  if (msg.includes("cena") || msg.includes("koszt")) {
-    reply = "Nasze ceny zaczynają się już od 6 zł za drożdżówkę 🥐.";
-  } else if (msg.includes("tort") || msg.includes("ciasto")) {
-    reply = "Polecamy nasz Tort Czekoladowy (80 zł) i Sernik Królewski (60 zł) 🍰.";
-  } else if (msg.includes("chleb")) {
-    reply = "Mamy świeży chleb razowy za 10 zł 🍞.";
-  } else if (msg.includes("dzień dobry") || msg.includes("hej") || msg.includes("witaj")) {
-    reply = "Dzień dobry! W czym mogę pomóc? 🙂";
-  } else if (msg.includes("godzina") || msg.includes("godziny") || msg.includes("kiedy")) {
-    reply = "BakeMania jest otwarta od poniedziałku do soboty w godzinach 6:00–18:00, a w niedziele 7:00–14:00 ⏰.";
+    let reply = "Nie rozumiem, możesz powtórzyć? 🤔";
+    msg = msg.toLowerCase();
+
+    if (msg.includes("cena") || msg.includes("koszt")) {
+      reply = "Nasze ceny zaczynają się już od 6 zł za drożdżówkę 🥐.";
+    } else if (msg.includes("tort") || msg.includes("ciasto")) {
+      reply = "Polecamy nasz Tort Czekoladowy (80 zł) i Sernik Królewski (60 zł) 🍰.";
+    } else if (msg.includes("chleb")) {
+      reply = "Mamy świeży chleb razowy za 10 zł 🍞.";
+    } else if (msg.includes("dzień dobry") || msg.includes("hej") || msg.includes("witaj")) {
+      reply = "Dzień dobry! W czym mogę pomóc? 🙂";
+    } else if (msg.includes("godzina") || msg.includes("godziny") || msg.includes("kiedy")) {
+      reply = "BakeMania jest otwarta od poniedziałku do soboty w godzinach 6:00–18:00, a w niedziele 7:00–14:00 ⏰.";
+    }
+
+    setTimeout(() => {
+      messages.innerHTML += "<div><b>BakeManiaBot:</b> " + reply + "</div>";
+      messages.scrollTop = messages.scrollHeight;
+    }, 500);
   }
-
-  // Wyświetl odpowiedź bota
-  setTimeout(() => {
-    messages.innerHTML += "<div><b>BakeManiaBot:</b> " + reply + "</div>";
-    messages.scrollTop = messages.scrollHeight;
-  }, 500);
-}
-</script>
+  </script>
 
 </body>
 </html>
